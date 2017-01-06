@@ -30,7 +30,6 @@ signed char setMagnetON(int magChan, char dutyCycle){
 	else
 		pwmVal = (int)((double)dutyCycle/100*65535);
 	
-	printf("dc: %d pwmval: %d \n",dutyCycle,pwmVal);
 	if(setChannel(magChan*3-1, pwmVal) != 0)
 		return -1;
 	
@@ -55,7 +54,8 @@ signed char magnetOFF(int magChan){
 	else
 		dc = 0;
 	
-	setMagnetON(magChan, dc);
+	if(setMagnetON(magChan, dc) != 0)
+		return -1;
 
 	return 0;
 }
@@ -72,7 +72,8 @@ signed char magnetON(int magChan){
 	else
 		dc = 100;
 	
-	setMagnetON(magChan, dc);
+	if(setMagnetON(magChan, dc) != 0)
+		return -1;
 
 	return 0;
 }

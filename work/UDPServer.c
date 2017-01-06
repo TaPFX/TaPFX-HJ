@@ -48,7 +48,7 @@ signed char waitForClient(char recvmsg[BUFSIZE]){
     if (n < 0)
       printf("ERROR in recvfrom");
 	
-
+/*
 	//gethostbyaddr: determine who sent the datagram
 	hostp = gethostbyaddr((const char *)&clientaddr.sin_addr.s_addr, sizeof(clientaddr.sin_addr.s_addr), AF_INET);
     if(hostp == NULL){
@@ -59,12 +59,12 @@ signed char waitForClient(char recvmsg[BUFSIZE]){
 		printf("ERROR on inet_ntoa\n");
 		return -1;}
     printf("server received datagram from %s (%s)\n", hostp->h_name, hostaddrp);
-	
+*/	
 	if(serverCrated == 0){
 		printf("ERROR: execute initUDPServer first\n");
 		return -1;}
 		
-
+/*
 	//gethostbyaddr: determine who sent the datagram
 	hostp = gethostbyaddr((const char *)&clientaddr.sin_addr.s_addr, sizeof(clientaddr.sin_addr.s_addr), AF_INET);
     if (hostp == NULL){
@@ -75,7 +75,7 @@ signed char waitForClient(char recvmsg[BUFSIZE]){
     if (hostaddrp == NULL){
 		printf("ERROR on inet_ntoa\n");
 		return -1;}
-		
+*/		
 	for(i=0;i<BUFSIZE;i++)
 		recvmsg[i]=buf[i];
 		

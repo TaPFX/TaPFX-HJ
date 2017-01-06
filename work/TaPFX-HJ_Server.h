@@ -18,7 +18,7 @@
 #include "TaPMagnets.h"
 #include <string.h>
 #include <stdio.h>
-#define DEFAULTPORT 6666
+#define DEFAULTPORT 5555
 
 char* MagnetMode;
 int MagnetChan;
@@ -31,7 +31,7 @@ signed char parseCommand(char *command);
 
 /*
  * Commands have to be in this format
- *		TaPMagnet;<Function>;<ChannelNumber>[;<DutyCycle>]
+ *		TaPFX-HJ;<Function>;<ChannelNumber>[;<DutyCycle>]
  * Valid Values:
  * Function: ON, OFF
  * ChannelNumber: 1-4
